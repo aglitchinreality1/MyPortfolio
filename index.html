@@ -8,101 +8,86 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/s1.css">
+    <link rel="stylesheet" href="css/s.css">
 </head>
 <body>
-    <!-- Background Video -->
-    <div class="video-background">
-        <video autoplay muted loop>
-            <source src="images/mainback.mp4" type="video/mp4">
-        </video>
+
+    <div class="liftcontent">
+        <img class="lift" src="images/lift.png">
+    </div>
+    <div class="main particle-container">
+        <video autoplay muted loop playsinline><source src="images/mainback.mp4" type="video/mp4"></video>
         <div class="video-overlay"></div>
-    </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <!-- Desktop Navigation -->
-        <div class="nav-container desktop-nav">
-            <div class="nav-button">
-                <span>ABOUT ME</span>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <!-- Desktop Navigation -->
+            <div class="nav-container desktop-nav">
+                <div class="nav-button"><span>ABOUT ME</span></div>
+                <div class="nav-button"><span>PROJECTS</span></div>
+                <div class="nav-button"><span>SKILLS</span></div>
+                <div class="nav-button"><span>ACHIEVEMENTS</span></div>
+                <div class="nav-button"><span>EXPERIENCES</span></div>
+                <div class="nav-button"><span>RESUME</span></div>
+                <div class="nav-button"><span>CONTACT</span></div>
             </div>
-            <div class="nav-button">
-                <span>PROJECTS</span>
-            </div>
-            <div class="nav-button">
-                <span>SKILLS</span>
-            </div>
-            <div class="nav-button">
-                <span>ACHIEVEMENTS</span>
-            </div>
-            <div class="nav-button">
-                <span>EXPERIENCES</span>
-            </div>
-            <div class="nav-button">
-                <span>RESUME</span>
-            </div>
-            <div class="nav-button">
-                <span>CONTACT</span>
-            </div>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <div class="mobile-nav">
-            <div class="mobile-nav-toggle">
-                <span>SECTORS</span>
-                <div class="dropdown-arrow">▼</div>
-            </div>
-            <div class="mobile-dropdown">
-                <div class="mobile-nav-button">
-                    <span>ABOUT ME</span>
-                </div>
-                <div class="mobile-nav-button">
-                    <span>PROJECTS</span>
-                </div>
-                <div class="mobile-nav-button">
-                    <span>SKILLS</span>
-                </div>
-                <div class="mobile-nav-button">
-                    <span>ACHIEVEMENTS</span>
-                </div>
-                <div class="mobile-nav-button">
-                    <span>EXPERIENCES</span>
-                </div>
-                <div class="mobile-nav-button">
-                    <span>RESUME</span>
-                </div>
-                <div class="mobile-nav-button">
-                    <span>CONTACT</span>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="content-left">
-            <div class="title-section">
-                <h1 class="main-title">
-                    <span class="archives">ARCHIVES</span>
-                    <span class="of">OF</span>
-                </h1>
-                <h2 class="name glitch" data-text="RAKKESH">RAKKESH</h2>
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav">
+                <div class="mobile-nav-toggle">
+                    <span>SECTORS</span>
+                    <div class="dropdown-arrow">▼</div>
+                </div>
+                <div class="mobile-dropdown">
+                    <div class="mobile-nav-button"><span>ABOUT ME</span></div>
+                    <div class="mobile-nav-button"><span>PROJECTS</span></div>
+                    <div class="mobile-nav-button"><span>SKILLS</span></div>
+                    <div class="mobile-nav-button"><span>ACHIEVEMENTS</span></div>
+                    <div class="mobile-nav-button"><span>EXPERIENCES</span></div>
+                    <div class="mobile-nav-button"><span>RESUME</span></div>
+                    <div class="mobile-nav-button"><span>CONTACT</span></div>
+                </div>
             </div>
-            <div class="typing-container">
-                <span class="typing-text">I'm an Innovator</span>
-                <span class="cursor">|</span>
-            </div>
-        </div>
-        
-        <div class="content-right">
-            <img class="profile-image" src="images/me.png">
-        </div>
-    </main>
+        </nav>
 
-    <div class="s1">
+        <div class="maincontent">
+            <div class="leftcontent">
+                <div class="title-section">
+                    <h1 class="main-title">
+                        <span class="archives">ARCHIVES</span>
+                        <span class="of">OF</span>
+                    </h1>
+                    <h2 class="name glitch" data-text="RAKKESH">RAKKESH</h2>
+                </div>
+                <div class="typing-container">
+                    <span class="typing-text">I'm an Innovator</span>
+                    <span class="cursor">|</span>
+                </div>
+            </div>
+            <div class="rightcontent">
+                <img class="profile-image" src="images/me.png">
+            </div>
+        </div>
 
     </div>
+
+    <div class="s">
+        <div class="s1">
+            <img class="toprail" src="images/toprail.png">
+            <img class="tracks" src="images/tracks.png">
+            <img class="bottomrail" src="images/toprail.png">
+        </div>
+        <div class="blackbase"></div>
+        <div class="s1">
+            <img class="toprail" src="images/toprail.png">
+            <img class="tracks" src="images/tracks.png">
+            <img class="bottomrail" src="images/toprail.png">
+        </div>
+        <div class="blackbase"></div>
+    </div>
+
 
     <script src="js/index.js"></script>
+    <script src="js/s.js"></script>
 </body>
 </html>

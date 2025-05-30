@@ -49,7 +49,6 @@ function toggleMobileDropdown() {
     const dropdown = document.querySelector('.mobile-dropdown');
     const toggle = document.querySelector('.mobile-nav-toggle');
     const arrow = document.querySelector('.dropdown-arrow');
-    const mainContent = document.querySelector('.main-content');
     
     isDropdownOpen = !isDropdownOpen;
     
@@ -69,7 +68,6 @@ function closeMobileDropdown() {
         const dropdown = document.querySelector('.mobile-dropdown');
         const toggle = document.querySelector('.mobile-nav-toggle');
         const arrow = document.querySelector('.dropdown-arrow');
-        const mainContent = document.querySelector('.main-content');
         
         dropdown.classList.remove('open');
         toggle.classList.remove('active');
@@ -81,7 +79,7 @@ function closeMobileDropdown() {
 // Start typing animation when page loads
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(typeText, 1000);
-    
+
     // Mobile navigation event listeners
     const mobileToggle = document.querySelector('.mobile-nav-toggle');
     if (mobileToggle) {
@@ -138,29 +136,28 @@ document.querySelectorAll('.nav-button').forEach(button => {
     });
 });
 
-// Parallax effect for background video (optional enhancement)
-window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
-    const video = document.querySelector('.video-background video');
-    if (video) {
-        video.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.particle-container');
+  const isDesktop = window.innerWidth > 768;
+  const totalParticles = isDesktop ? 50 : 20;
 
-// Enhanced glitch effect trigger
-const glitchElement = document.querySelector('.glitch');
-if (glitchElement) {
-    setInterval(() => {
-        glitchElement.style.animation = 'none';
-        setTimeout(() => {
-            glitchElement.style.animation = 'glitch 3s infinite';
-        }, 100);
-    }, 8000);
-}
+  for (let i = 0; i < totalParticles; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
 
-// Handle window resize
-window.addEventListener('resize', function() {
-    if (window.innerWidth > 768 && isDropdownOpen) {
-        closeMobileDropdown();
-    }
+    // Random position & size
+    particle.style.left = Math.random() * 100 + 'vw';
+    particle.style.bottom = '-' + (Math.random() * 20) + 'px'; // Start off-screen bottom
+    const size = 4 + Math.random() * 6;
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+
+    // Random animation speed & delay
+    const duration = 5 + Math.random() * 10;
+    const delay = Math.random() * 5;
+    particle.style.animationDuration = `${duration}s`;
+    particle.style.animationDelay = `${delay}s`;
+
+    container.appendChild(particle);
+  }
 });

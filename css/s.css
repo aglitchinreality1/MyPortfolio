@@ -1,0 +1,82 @@
+.s{
+    position: relative;
+    width: 100vw;
+}
+
+.s1{
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to right,#8c8c8c, #acacac, #e3e3e3, #acacac, #8c8c8c);
+}
+
+.toprail{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 10vh;
+    width: auto;
+    z-index: 201;
+}
+
+.bottomrail{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 10vh;
+    width: auto;
+    transform: scaleY(-1);
+    z-index: 201;
+}
+
+.tracks{
+    position: absolute;
+    height: 100vh;
+    width: auto;
+    right: 0;
+    z-index: 201;
+}
+
+.blackbase{
+    position: relative;
+    height: 10vh;
+    width: 100%;
+    background-color: black;
+    z-index: 201;
+}
+
+.liftcontent{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 35vh;
+    z-index: 100;
+}
+
+.lift{
+    position: absolute;
+    right: 1.7vw;
+    width: 70%;
+    height: auto;
+}
+
+@media (max-width: 1000px){
+    .toprail, .bottomrail{
+        width: 40vw;
+        height: 5vh;
+    }
+    .blackbase{
+        height: 5vh;
+    }
+    .tracks{
+        width: 7vw;
+        height: 100vh;
+    }
+    .liftcontent{
+        width: 30vw;
+        right: 3vw;
+    }
+}
