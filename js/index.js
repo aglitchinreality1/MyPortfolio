@@ -7,6 +7,8 @@ const phrases = [
     "I'm a Web Developer", 
     "I'm an ML Engineer",
     "I'm a Top Rank Holder",
+    "I'm an Inventor",
+    "I'm a Visionary",
     "I'm an Author",
     "I'm a Tech Enthusiast"
 ];
@@ -106,12 +108,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Mobile navigation button clicks
-    document.querySelectorAll('.mobile-nav-button').forEach(button => {
-        button.addEventListener('click', function() {
-            const section = this.textContent.trim().toLowerCase().replace(' ', '-');
-            console.log(`Navigate to: ${section}`);
+    document.querySelectorAll('.mobile-nav-button').forEach((button, index) => {
+        button.addEventListener('click', function () {
+            const targetId = `s${index + 1}`;
+            const targetSection = document.getElementById(targetId);
             closeMobileDropdown();
-            // Add your navigation logic here
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 });
@@ -127,14 +133,25 @@ document.querySelectorAll('.nav-button').forEach(button => {
     });
 });
 
-// Add click handlers for desktop navigation
-document.querySelectorAll('.nav-button').forEach(button => {
-    button.addEventListener('click', function() {
-        const section = this.textContent.trim().toLowerCase().replace(' ', '-');
-        console.log(`Navigate to: ${section}`);
-        // Add your navigation logic here
+
+document.querySelectorAll('.nav-button').forEach((button, index) => {
+    button.addEventListener('click', function () {
+        const targetId = `s${index + 1}`; 
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start' 
+            });
+        } else {
+            console.warn(`Section ${targetId} not found`);
+        }
     });
 });
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.particle-container');

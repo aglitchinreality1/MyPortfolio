@@ -4,9 +4,14 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: "Orbitron", Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .main{
@@ -70,9 +75,9 @@ body {
     padding: 12px 24px;
     margin-right: 4px;
     margin-left: 4px;
-    background: rgba(255, 255, 255, 0.342);
+    background: rgba(255, 255, 255, 0.503);
     backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.599);
     border-radius: 12px;
     color: #000;
     font-weight: 700;
