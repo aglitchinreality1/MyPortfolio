@@ -78,6 +78,8 @@ function closeMobileDropdown() {
     }
 }
 
+let manMoved = false;
+
 // Start typing animation when page loads
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(typeText, 1000);
@@ -107,16 +109,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // // Mobile navigation button clicks
+    // document.querySelectorAll('.mobile-nav-button').forEach((button, index) => {
+    //     button.addEventListener('click', function () {
+    //         const targetId = `s${index + 1}`;
+    //         const targetSection = document.getElementById(targetId);
+    //         closeMobileDropdown();
+    //         if (targetSection) {
+    //             targetSection.scrollIntoView({
+    //                 behavior: 'smooth'
+    //             });
+    //         }
+    //     });
+    // });
+
     // Mobile navigation button clicks
     document.querySelectorAll('.mobile-nav-button').forEach((button, index) => {
         button.addEventListener('click', function () {
             const targetId = `s${index + 1}`;
             const targetSection = document.getElementById(targetId);
+            const man = document.getElementById('man');
+
             closeMobileDropdown();
+
             if (targetSection) {
                 targetSection.scrollIntoView({
                     behavior: 'smooth'
                 });
+
+                if (man) {
+                    man.style.transition = 'none';
+                    man.style.transform = 'translateX(0)';
+                    manMoved = false;
+                }
+
+                setTimeout(() => {
+                    if (man) {
+                        man.style.transition = 'transform 1.5s ease';
+                        man.style.transform = 'translateX(-11vw)';
+                        manMoved = true;
+                    }
+                }, 1000);
             }
         });
     });
@@ -134,22 +167,55 @@ document.querySelectorAll('.nav-button').forEach(button => {
 });
 
 
+
+
 document.querySelectorAll('.nav-button').forEach((button, index) => {
     button.addEventListener('click', function () {
-        const targetId = `s${index + 1}`; 
+        const targetId = `s${index + 1}`;
         const targetSection = document.getElementById(targetId);
+        const man = document.getElementById('man');
 
         if (targetSection) {
             targetSection.scrollIntoView({
                 behavior: 'smooth',
-                block: 'start' 
+                block: 'start'
             });
+
+            if (man) {
+                man.style.transition = 'none';
+                man.style.transform = 'translateX(0)';
+                manMoved = false;
+            }
+
+            setTimeout(() => {
+                if (man) {
+                    man.style.transition = 'transform 1.5s ease';
+                    man.style.transform = 'translateX(-11vw)';
+                    manMoved = true;
+                }
+            }, 1000);
         } else {
             console.warn(`Section ${targetId} not found`);
         }
     });
 });
 
+// Detect manual scrolling and reset "man"
+let lastScrollTop = window.scrollY;
+window.addEventListener('scroll', () => {
+    const man = document.getElementById('man');
+    const currentScroll = window.scrollY;
+
+    if (manMoved && Math.abs(currentScroll - lastScrollTop) > 10) {
+        if (man) {
+            man.style.transition = 'transform 1.5s ease';
+            man.style.transform = 'translateX(0)';
+            manMoved = false;
+        }
+    }
+
+    lastScrollTop = currentScroll;
+});
 
 
 
