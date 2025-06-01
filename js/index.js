@@ -129,6 +129,7 @@ document.querySelectorAll('.b').forEach((button, index) => {
         const targetId = `s${index % 7}`;
         const targetSection = document.getElementById(targetId);
         const man = document.getElementById('man');
+        closeMobileDropdown();
 
         if (targetSection) {
             targetSection.scrollIntoView({
