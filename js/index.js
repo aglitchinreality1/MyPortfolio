@@ -108,51 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
         });
     }
-    
-    // // Mobile navigation button clicks
-    // document.querySelectorAll('.mobile-nav-button').forEach((button, index) => {
-    //     button.addEventListener('click', function () {
-    //         const targetId = `s${index + 1}`;
-    //         const targetSection = document.getElementById(targetId);
-    //         closeMobileDropdown();
-    //         if (targetSection) {
-    //             targetSection.scrollIntoView({
-    //                 behavior: 'smooth'
-    //             });
-    //         }
-    //     });
-    // });
-
-    // Mobile navigation button clicks
-    document.querySelectorAll('.mobile-nav-button').forEach((button, index) => {
-        button.addEventListener('click', function () {
-            const targetId = `s${index + 1}`;
-            const targetSection = document.getElementById(targetId);
-            const man = document.getElementById('man');
-
-            closeMobileDropdown();
-
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
-
-                if (man) {
-                    man.style.transition = 'none';
-                    man.style.transform = 'translateX(0)';
-                    manMoved = false;
-                }
-
-                setTimeout(() => {
-                    if (man) {
-                        man.style.transition = 'transform 1.5s ease';
-                        man.style.transform = 'translateX(-11vw)';
-                        manMoved = true;
-                    }
-                }, 1000);
-            }
-        });
-    });
 });
 
 // Smooth hover effects for navigation
@@ -169,9 +124,9 @@ document.querySelectorAll('.nav-button').forEach(button => {
 
 
 
-document.querySelectorAll('.nav-button').forEach((button, index) => {
+document.querySelectorAll('.b').forEach((button, index) => {
     button.addEventListener('click', function () {
-        const targetId = `s${index + 1}`;
+        const targetId = `s${index % 7}`;
         const targetSection = document.getElementById(targetId);
         const man = document.getElementById('man');
 
@@ -230,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Random position & size
     particle.style.left = Math.random() * 100 + 'vw';
-    particle.style.bottom = '-' + (Math.random() * 20) + 'px'; // Start off-screen bottom
+    particle.style.bottom = '-' + (Math.random() * 20) + 'px';
     const size = 4 + Math.random() * 6;
     particle.style.width = size + 'px';
     particle.style.height = size + 'px';

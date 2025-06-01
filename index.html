@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/s.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
 </head>
 <body>
 
@@ -25,13 +26,13 @@
         <nav class="navbar">
             <!-- Desktop Navigation -->
             <div class="nav-container desktop-nav">
-                <div class="nav-button"><span>ABOUT ME</span></div>
-                <div class="nav-button"><span>PROJECTS</span></div>
-                <div class="nav-button"><span>SKILLS</span></div>
-                <div class="nav-button"><span>ACHIEVEMENTS</span></div>
-                <div class="nav-button"><span>EXPERIENCES</span></div>
-                <div class="nav-button"><span>RESUME</span></div>
-                <div class="nav-button"><span>CONTACT</span></div>
+                <div class="nav-button b"><span>ABOUT ME</span></div>
+                <div class="nav-button b"><span>SKILLS</span></div>
+                <div class="nav-button b"><span>PROJECTS</span></div>
+                <div class="nav-button b"><span>ACHIEVEMENTS</span></div>
+                <div class="nav-button b"><span>EXPERIENCES</span></div>
+                <div class="nav-button b"><span>RESUME</span></div>
+                <div class="nav-button b"><span>CONTACT</span></div>
             </div>
 
             <!-- Mobile Navigation -->
@@ -41,13 +42,13 @@
                     <div class="dropdown-arrow">▼</div>
                 </div>
                 <div class="mobile-dropdown">
-                    <div class="mobile-nav-button"><span>ABOUT ME</span></div>
-                    <div class="mobile-nav-button"><span>PROJECTS</span></div>
-                    <div class="mobile-nav-button"><span>SKILLS</span></div>
-                    <div class="mobile-nav-button"><span>ACHIEVEMENTS</span></div>
-                    <div class="mobile-nav-button"><span>EXPERIENCES</span></div>
-                    <div class="mobile-nav-button"><span>RESUME</span></div>
-                    <div class="mobile-nav-button"><span>CONTACT</span></div>
+                    <div class="mobile-nav-button b"><span>ABOUT ME</span></div>
+                    <div class="mobile-nav-button b"><span>SKILLS</span></div>
+                    <div class="mobile-nav-button b"><span>PROJECTS</span></div>
+                    <div class="mobile-nav-button b"><span>ACHIEVEMENTS</span></div>
+                    <div class="mobile-nav-button b"><span>EXPERIENCES</span></div>
+                    <div class="mobile-nav-button b"><span>RESUME</span></div>
+                    <div class="mobile-nav-button b"><span>CONTACT</span></div>
                 </div>
             </div>
         </nav>
@@ -74,14 +75,17 @@
     </div>
 
     <div class="s">
-        <div class="sc s1" id="s1">
+        <div class="sc" id="s0">
             <div class="sector-header">
                 <h1 class="sector-label">SECTOR 1</h1>
                 <h2 class="about-label">ABOUT ME</h2>
             </div>
             <div class="about">
                 <p class="aboutme">
-                    Hey peeps! I’m Rakkesh, a computer science undergrad who’s obsessed with building tech that actually matters. Whether it’s AI, smart systems, or wild UI ideas like this site (yep, I coded this!), I love turning random sparks into working stuff. Currently deep into ML, embedded systems, and whatever else keeps my brain buzzing.
+                    Hey peeps! I’m Rakkesh, a computer science undergrad who’s obsessed with building tech that 
+                    actually matters. Whether it’s AI, smart systems, or wild UI ideas like this site 
+                    (yep, I coded this!), I love turning random sparks into working stuff. Currently deep 
+                    into ML, embedded systems, and whatever else keeps my brain buzzing.
                 </p>
                 <div class="aboutgrid">
                     <div class="left-top ab">
@@ -109,6 +113,7 @@
                             <div class="event"><span class="year">2024</span><span class="desc">4th University Rank</span></div>
                             <div class="event"><span class="year">2024</span><span class="desc">Completed HEDIS</span></div>
                             <div class="event"><span class="year">2025</span><span class="desc">HEDIS V2 Initiated</span></div>
+                            <div class="event"><span class="year">2025</span><span class="desc">Theorized ELYRA</span></div>
                             <div class="event"><span class="year">2025</span><span class="desc">Intern at IIT Madras</span></div>
                             <div class="event"><span class="year" style="border-right: 0px;">2025</span><span class="desc">To Be Continued...</span></div>
                         </div>
@@ -117,15 +122,83 @@
                     </div>
                 </div>
             </div>
+            <img class="toprail" src="images/toprail.png">
+            <img class="tracks" src="images/tracks.png">
+            <img class="bottomrail" src="images/toprail.png">
+        </div>
+        <div class="blackbase"></div>
+        <div class="sc" id="s1">
+            <div class="sector-header">
+                <h1 class="sector-label">SECTOR 2</h1>
+                <h2 class="about-label">SKILLS</h2>
+            </div>
+
+            <div class="skillcontain">
+                <p class="aboutme">
+                    Most of what I know comes from chasing curiosity through YouTube, Udemy, and a whole lot of ChatGPT 
+                    convos. I don’t just learn tools. I pick up skills when there's a purpose behind them. 
+                    Whether it's building something new or solving a problem, it’s this loop of learning and 
+                    applying that keeps my skillset sharp and growing. Scroll throw each category!
+                </p>
+                <div class="skillshow">
+                    <div class="skill-card"><div class="card-content">
+                        <h3><img src="images/lang.png" class="skillim">Languages</h3>
+                        <div class="skill-list">
+                          <div>Python Advanced</div><div>C Language Intermediate</div>
+                          <div>JavaScript Intermediate</div><div>Java Basics</div>
+                        </div>
+                    </div></div>
+                    <div class="skill-card"><div class="card-content">
+                        <h3><img src="images/web.png" class="skillim">Web Development</h3>
+                        <div class="skill-list">
+                          <div>HTML 5</div><div>CSS</div><div>Bootstrap</div>
+                          <div>Node.js</div><div>Express.js</div><div>Flask</div>
+                          <div>Passport.js</div><div>OAuth</div>
+                        </div>
+                    </div></div>
+                    <div class="skill-card"><div class="card-content">
+                        <h3><img src="images/database.png" class="skillim">Databases</h3>
+                        <div class="skill-list">
+                          <div>PostreSQL</div><div>MySQL</div>
+                          <div>MongoDB Basics</div>
+                        </div>
+                    </div></div>
+                    <div class="skill-card"><div class="card-content">
+                        <h3><img src="images/ml.png" class="skillim">Machine Learning</h3>
+                        <div class="skill-list">
+                          <div>YOLO v5</div><div>YOLO v8</div>
+                          <div>Scikit Learn</div><div>Pandas</div>
+                        </div>
+                    </div></div>
+                    <div class="skill-card"><div class="card-content">
+                        <h3><img src="images/vs.png" class="skillim">Environments</h3>
+                        <div class="skill-list">
+                          <div>VS Code</div><div>Jupyter Notebook</div>
+                          <div>Google Colab</div><div>Postman</div>
+                        </div>
+                    </div></div>
+                    <div class="skill-card"><div class="card-content">
+                        <h3><img src="images/os.png" class="skillim">OS/Devices</h3>
+                        <div class="skill-list">
+                          <div>Windows</div><div>Debian Bullseye</div>
+                          <div>Linux</div><div>Raspberry Pi 4</div>
+                        </div>
+                    </div></div>
+                </div>
+                <h4 class="skscl">Scroll▼</h4>
+                <div class="certificates">
+                    <a class="cert" href="https://drive.google.com/drive/folders/1B0feGQA6aYCuA0NzfnCr6FhAFiQFVMow?usp=sharing">View Certificates</a>
+                </div>
+            </div>
 
             <img class="toprail" src="images/toprail.png">
             <img class="tracks" src="images/tracks.png">
             <img class="bottomrail" src="images/toprail.png">
         </div>
         <div class="blackbase"></div>
-        <div class="sc s2" id="s2">
+        <div class="sc" id="s2">
             <div class="sector-header">
-                <h1 class="sector-label">SECTOR 2</h1>
+                <h1 class="sector-label">SECTOR 3</h1>
                 <h2 class="about-label">PROJECTS</h2>
             </div>
 
@@ -134,18 +207,7 @@
             <img class="bottomrail" src="images/toprail.png">
         </div>
         <div class="blackbase"></div>
-        <div class="sc s3" id="s3">
-            <div class="sector-header">
-                <h1 class="sector-label">SECTOR 3</h1>
-                <h2 class="about-label">SKILLS</h2>
-            </div>
-
-            <img class="toprail" src="images/toprail.png">
-            <img class="tracks" src="images/tracks.png">
-            <img class="bottomrail" src="images/toprail.png">
-        </div>
-        <div class="blackbase"></div>
-        <div class="sc s4" id="s4">
+        <div class="sc" id="s3">
             <div class="sector-header">
                 <h1 class="sector-label">SECTOR 4</h1>
                 <h2 class="about-label">ACHIEVEMENTS</h2>
@@ -156,7 +218,7 @@
             <img class="bottomrail" src="images/toprail.png">
         </div>
         <div class="blackbase"></div>
-        <div class="sc s5" id="s5">
+        <div class="sc" id="s4">
             <div class="sector-header">
                 <h1 class="sector-label">SECTOR 5</h1>
                 <h2 class="about-label">EXPERIENCES</h2>
@@ -167,7 +229,7 @@
             <img class="bottomrail" src="images/toprail.png">
         </div>
         <div class="blackbase"></div>
-        <div class="sc s6" id="s6">
+        <div class="sc" id="s5">
             <div class="sector-header">
                 <h1 class="sector-label">SECTOR 6</h1>
                 <h2 class="about-label">RESUME</h2>
@@ -177,21 +239,11 @@
             <img class="tracks" src="images/tracks.png">
             <img class="bottomrail" src="images/toprail.png">
         </div>
-        <div class="blackbase"></div>
-        <div class="sc s7" id="s7">
-            <div class="sector-header">
-                <h1 class="sector-label">SECTOR 7</h1>
-                <h2 class="about-label">CONTACT</h2>
-            </div>
-
-            <img class="toprail" src="images/toprail.png">
-            <img class="tracks" src="images/tracks.png">
-            <img class="bottomrail" src="images/toprail.png">
-        </div>
+        <div class="footer" id="s6"></div>
     </div>
 
 
     <script src="js/index.js"></script>
-    <script src="js/s.js"></script>
+    <script src="js/skills.js"></script>
 </body>
 </html>

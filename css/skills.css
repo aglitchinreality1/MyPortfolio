@@ -1,0 +1,177 @@
+.skillcontain{
+    position: absolute;
+    top: 20vh;
+    width: 64vw;
+    height: 80vh;
+    padding-left: 35px;
+    padding-bottom: 35px;
+}
+
+.skillshow {
+  height: 60%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.303);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.skill-card {
+  background: url('../images/back.gif') center / cover no-repeat;
+  overflow: hidden;
+  border-radius: 15px;
+  color: rgb(197, 197, 197);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1rem;
+  user-select: none;
+  padding: 20px;
+  text-align: center;
+  flex-direction: column;
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  gap: 5px;
+}
+
+.skill-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-bottom: 20px; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scrollbar-width: none; 
+}
+
+.skill-list::-webkit-scrollbar {
+  display: none; 
+}
+
+.skill-list div {
+  background-color: rgba(105, 105, 105, 0.2);
+  padding: 5px;
+  border-radius: 7px;
+  font-weight: 500;
+}
+
+.skscl{
+    display: none;
+}
+
+.skillim{
+    height: 1.2rem;
+}
+
+.certificates{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.303);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 30px;
+    font-size: 2.5vh;
+    font-weight: 700;
+}
+
+.cert{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(197, 197, 197);
+    padding: 15px;
+    border-radius: 13px;
+    background-color: black;
+    text-decoration: none;
+    width: 19.5vw;
+}
+
+.cert:hover{
+    background-color: rgb(197, 197, 197);
+    color: black;
+}
+
+@media (max-width: 1000px) {
+  .skillcontain{
+    top: 17vh;
+    height: 83vh;
+    padding-left: 20px;
+    padding-bottom: 20px;
+  }
+  .skillshow {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    height: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .skillshow::-webkit-scrollbar {
+    display: none; 
+  }
+
+  .skill-card {
+    height: calc(50% - 10px);
+    width: 100%;
+    flex-shrink: 0;
+    padding: 10px;
+  }
+  .skscl{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 10px;
+    background-color: rgba(0, 0, 0, 0.303);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-bottom: 10px;
+  }
+  .card-content h3{
+    font-size: 2vh;
+    padding-bottom: 10px;
+  }
+  .skill-list div{
+    font-size: 10px;
+    padding: 7px;
+  }
+  .skillim{
+    height: 0.9rem;
+  }
+  .certificates{
+    margin-top: 3vh;
+    border-radius: 10px;
+    height: 6vh;
+    padding: 0;
+    font-size: 2vh;
+  }
+  .cert{
+    height: 100%;
+    width: 100%;
+    border-radius: 7px;
+  }
+}
