@@ -1,7 +1,7 @@
 .about{
     position: absolute;
     top: 20vh;
-    width: 60vw;
+    width: 64vw;
     height: 80vh;
     padding-left: 35px;
     padding-bottom: 35px;
@@ -10,6 +10,7 @@
 .aboutme{
     font-weight: 700;
     padding-bottom: 35px;
+    text-align: justify;
 }
 
 .aboutgrid{
@@ -21,7 +22,7 @@
     gap: 35px; 
 }
 
-.left-top {
+/* .left-top {
     grid-column: 1;
     grid-row: 1;
     background-color: black;
@@ -29,6 +30,16 @@
     display: flex;
     gap: 10px;
     flex-direction: column;
+} */
+
+.left-top {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: black;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 15px;
 }
 
 .left-bottom {
@@ -50,7 +61,7 @@
     padding: 20px;
 }
 
-.ab{
+/* .ab{
     background: url('../images/back.gif') center / cover no-repeat;
     overflow: hidden;
     border-radius: 20px;
@@ -70,6 +81,36 @@
     padding: 15px;
     border-radius: 8px;
     font-weight: 500;
+} */
+
+.ab {
+    background: url('../images/back.gif') center / cover no-repeat;
+    overflow: hidden;
+    border-radius: 20px;
+    color: rgb(197, 197, 197);
+}
+
+.edh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    gap: 15px;
+}
+
+.ed {
+    text-align: center;
+    background-color: rgba(105, 105, 105, 0.2);
+    padding: 1px;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .hby{
@@ -110,6 +151,7 @@
     height: 70%;
     z-index: 20;
     padding-left: 35px;
+    padding-right: 35px;
     scrollbar-width: none;
     color: rgb(197, 197, 197);
 }
@@ -123,6 +165,8 @@
     align-items: center;
     font-weight: 500;
     font-size: 16px;
+    background-color: rgba(105, 105, 105, 0.2);
+    border-radius: 5px;
 }
 
 .year {
@@ -131,10 +175,23 @@
     text-align: center;
     padding: 4px 10px;
     border-radius: 5px;
-    margin-right: 15px;
+    margin-right: 3vw;
     white-space: nowrap;
     color: black;
     border-right: rgb(47, 255, 64) solid 3px;
+}
+
+.desc{
+    text-align: center;
+}
+
+.scrol{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 100;
 }
 
 @media (max-width: 1000px) {
@@ -155,13 +212,11 @@
         gap: 1.4vh;
     }
     .left-top {
-        justify-content: center;
         height: 25%;
         padding: 10px;
         gap: 8px;
     }
     .left-bottom {
-        justify-content: center;
         height: 25%;
         padding: 10px;
         gap: 8px;
@@ -175,8 +230,6 @@
     }
     .edh{
         font-size: 1.3vh;
-        line-height: 0.9;
-        height: 1.4vh;
         gap: 5px;
     }
     .ed{
@@ -201,9 +254,15 @@
     }
     .event{
         font-size: 1.3vh;
-        padding-left: 10px;
     }
     .year{
-        width: 50px;
+        max-width: 16vw;
+        margin-right: 0;
+    }
+    .desc{
+        width: 70%;
+    }
+    .scrol{
+        bottom: 5px;
     }
 }
