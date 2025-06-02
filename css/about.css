@@ -20,6 +20,8 @@
     height: 75%;
     width: 100%;
     gap: 35px; 
+    background-color: rgba(0, 0, 0, 0.303);
+    border-radius: 20px;
 }
 
 .left-top {

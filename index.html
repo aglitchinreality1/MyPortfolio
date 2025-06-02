@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/s.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
 </head>
 <body>
 
@@ -138,7 +139,7 @@
                     Most of what I know comes from chasing curiosity through YouTube, Udemy, and a whole lot of ChatGPT 
                     convos. I don’t just learn tools. I pick up skills when there's a purpose behind them. 
                     Whether it's building something new or solving a problem, it’s this loop of learning and 
-                    applying that keeps my skillset sharp and growing. Scroll throw each category!
+                    applying that keeps my skillset sharp and growing. Scroll through each category!
                 </p>
                 <div class="skillshow">
                     <div class="skill-card"><div class="card-content">
@@ -190,7 +191,6 @@
                     <a class="cert" href="https://drive.google.com/drive/folders/1B0feGQA6aYCuA0NzfnCr6FhAFiQFVMow?usp=sharing">View Certificates</a>
                 </div>
             </div>
-
             <img class="toprail" src="images/toprail.png">
             <img class="tracks" src="images/tracks.png">
             <img class="bottomrail" src="images/toprail.png">
@@ -201,7 +201,46 @@
                 <h1 class="sector-label">SECTOR 3</h1>
                 <h2 class="about-label">PROJECTS</h2>
             </div>
+            <div class="projectcontain">
+                <p class="aboutme">
+                    You’ve probably scrolled through Sector 2 by now. Cool stuff, right? But what’s the point of knowing all 
+                    that if it hasn’t been put to work? Projects are where everything clicks, skills meet ideas, and concepts 
+                    turn into actual things. From casual builds to more focused problem-solving, this is the zone where my curiosity turns into creation. 
+                </p>
+                <div class="projectcards">
+                    <button class="pleft" id="pleft"></button>
 
+                    <div class="cards-wrapper">
+                      <div class="project-card">
+                        <div class="project-title" id="p1">H.E.D.I.S</div>
+                        <div class="project-content">
+                          <div class="top-box" id="p2"></div>
+                          <div class="bottom-box" id="p3">
+                            H.E.D.I.S (Helmet Detection Ignition System) is a rider safety system I developed over the span of a year with ₹1,00,000 seed funding from my uni. 
+                            It uses YOLOv5 Object Detection integrated via Flask backend and a custom web front end to detect helmet usage in real time. 
+                            If the rider isn’t wearing a helmet, the bike responds by gradually reducing speed with escalating alerts. I built an entire electric bike from scratch 
+                            to house the HEDIS module, and it’s been fully road tested. The system is now being considered for deployment within the uni campus. 
+                            This wasn’t just a prototype. It was a proof of what one idea can become when taken all the way.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="project-card second-card">
+                        <div class="project-title" id="p4">Online Board Game</div>
+                        <div class="project-content">
+                          <div class="top-box box2" id="p5"></div>
+                          <div class="bottom-box" id="p6">
+                            An online multi player board game I developed from scratch using full stack web dev skills. Built on Express with PgAdmin handling the database, 
+                            it features real time gameplay powered by Web Sockets, alongside Bootstrap, HTML, CSS, and JavaScript for a custom designed interface. 
+                            Players can sign up with a secure auth mechanism, store progress in a dedicated user database, create private rooms to challenge friends, 
+                            or go head-to-head with an AI opponent powered by the Mini max algorithm. Every UI element was designed by hand for a clean, intuitive experience.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                
+                    <button class="pright" id="pright"></button>
+                </div>
+            </div>
             <img class="toprail" src="images/toprail.png">
             <img class="tracks" src="images/tracks.png">
             <img class="bottomrail" src="images/toprail.png">
@@ -244,6 +283,6 @@
 
 
     <script src="js/index.js"></script>
-    <script src="js/skills.js"></script>
+    <script src="js/projects.js"></script>
 </body>
 </html>
