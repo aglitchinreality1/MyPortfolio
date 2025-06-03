@@ -1,0 +1,221 @@
+.achievementcontain{
+  position: absolute;
+  top: 20vh;
+  width: 64vw;
+  height: 80vh;
+  padding-left: 35px;
+  padding-bottom: 35px;
+}
+
+.achcont{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 75%;
+  width: 100%;
+  background: url('../images/back.gif') center / cover no-repeat;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  color: rgb(197, 197, 197);
+}
+
+.achcontent{
+  display: flex;
+  position: relative;
+  background-color: rgba(105, 105, 105, 0.2);
+  height: 100%;
+  margin: 30px;
+  padding: 20px 0;
+  border-radius: 10px;
+  overflow-x: scroll;
+  scrollbar-width: none; 
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.achcontent::-webkit-scrollbar {
+  display: none; 
+}
+
+.achcard{
+  position: relative;
+  height: 100%;
+  min-width: calc(100% / 3);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ach-date {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ach-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  height: 8vh;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.dash {
+  width: calc((100% - 40px)/2);
+  height: 5px;
+  background-color: #ACACAC;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(to right, #acacac, #e3e3e3, #ACACAC);
+  border-radius: 100%;
+  z-index: 100;
+  color: black;
+}
+
+.ach-content-card {
+  width: 90%;
+  height: 90%;
+  background: linear-gradient(to right, #acacac, #e3e3e3, #ACACAC);
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: black;
+  overflow: hidden;
+}
+
+.ach-content-card h3{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.ach-content-card p{
+  width: 100%;
+  font-size: 16px;
+  max-height: 11vh;
+  text-align: center;
+  font-weight: 600;
+  overflow-y: scroll;
+  scrollbar-width: none; 
+}
+
+.ach-content-card p::-webkit-scrollbar {
+  display: none; 
+}
+
+.achimg{
+  height: 40%;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.lf, .rf{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  top: 0;
+  height: 100%;
+  width: 35px;
+}
+
+.rf{
+  right: 0;
+}
+
+.achscr{
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .achievementcontain{
+    top: 17vh;
+    height: 83vh;
+    padding-left: 20px;
+  }
+
+  .achcont {
+    flex-direction: column;
+    height: 70%;
+    border-radius: 10px;
+  }
+
+  .achcontent{
+    padding: 10px 0;
+    margin: 20px;
+    border-radius: 5px;
+  }
+  .achcard{
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+  }
+  .lf, .rf{
+    width: 20px;
+    font-size: 10px;
+  }
+
+  .ach-date {
+    position: absolute;
+    top: 1vh;
+    font-size: 13px;
+  }
+
+  .ach-timeline {
+    gap: 0;
+    height: 6vh;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .ach-content-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 70%;
+  }
+
+  
+  .dash {
+    width: calc((100% - 30px)/2);
+  }
+
+  .circle{
+    width: 30px;
+    height: 30px;
+  }
+
+  .ach-content-card h3{
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .ach-content-card p{
+    font-size: 10px;
+  }
+  .achscr{
+    display: block;
+    font-size: 10px;
+    padding-top: 4px;
+    width: 100%;
+    text-align: center;
+    color: #000;
+  }
+}

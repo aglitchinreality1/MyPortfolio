@@ -11,7 +11,7 @@
 
 .toprail{
     position: absolute;
-    top: 0;
+    top: -1px;
     right: 0;
     height: 10vh;
     width: auto;
@@ -20,7 +20,7 @@
 
 .bottomrail{
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     right: 0;
     height: 10vh;
     width: auto;
