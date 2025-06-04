@@ -98,14 +98,6 @@
   color: #cbcbcb;
 }
 
-.footer{
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    background-color: #000;
-    z-index: 1000;
-}
-
 @media (max-width: 1000px){
     .toprail, .bottomrail{
         width: 40vw;

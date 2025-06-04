@@ -121,9 +121,6 @@ document.querySelectorAll('.nav-button').forEach(button => {
     });
 });
 
-
-
-
 document.querySelectorAll('.b').forEach((button, index) => {
     button.addEventListener('click', function () {
         const targetId = `s${index % 7}`;
@@ -132,29 +129,38 @@ document.querySelectorAll('.b').forEach((button, index) => {
         closeMobileDropdown();
 
         if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            const performScroll = () => {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
 
-            if (man) {
-                man.style.transition = 'none';
+                setTimeout(() => {
+                    if (man && targetId != 's6') {
+                        man.style.transition = 'transform 0.5s ease';
+                        man.style.transform = 'translateX(-11vw)';
+                        manMoved = true;
+                    }
+                }, 1000);
+            };
+
+            if (manMoved && man) {
+                man.style.transition = 'transform 0.5s ease';
                 man.style.transform = 'translateX(0)';
                 manMoved = false;
-            }
 
-            setTimeout(() => {
-                if (man) {
-                    man.style.transition = 'transform 1.5s ease';
-                    man.style.transform = 'translateX(-11vw)';
-                    manMoved = true;
-                }
-            }, 1000);
+                setTimeout(() => {
+                    performScroll();
+                }, 500); 
+            } else {
+                performScroll();
+            }
         } else {
             console.warn(`Section ${targetId} not found`);
         }
     });
 });
+
 
 // Detect manual scrolling and reset "man"
 let lastScrollTop = window.scrollY;
@@ -164,7 +170,7 @@ window.addEventListener('scroll', () => {
 
     if (manMoved && Math.abs(currentScroll - lastScrollTop) > 10) {
         if (man) {
-            man.style.transition = 'transform 1.5s ease';
+            man.style.transition = 'transform 0.5s ease';
             man.style.transform = 'translateX(0)';
             manMoved = false;
         }
@@ -200,3 +206,13 @@ document.addEventListener('DOMContentLoaded', () => {
     container.appendChild(particle);
   }
 });
+
+
+
+document.getElementById("go").addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
