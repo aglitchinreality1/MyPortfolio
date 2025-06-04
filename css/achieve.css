@@ -8,7 +8,6 @@
 }
 
 .achcont{
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 75%;
@@ -22,7 +21,6 @@
 
 .achcontent{
   display: flex;
-  position: relative;
   height: 100%;
   margin: 30px;
   padding: 20px 0;
@@ -135,6 +133,10 @@
 
 .rf{
   right: 0;
+}
+
+.lf{
+  left: 0;
 }
 
 .achscr{
