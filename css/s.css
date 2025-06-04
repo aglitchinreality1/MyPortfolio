@@ -5,7 +5,7 @@
 
 .sc{
     position: relative;
-    height: 100vh;
+    height: 100dvh;
     background: linear-gradient(to right,#8c8c8c, #acacac, #e3e3e3, #acacac, #747474, #000000);
 }
 

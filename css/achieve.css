@@ -23,7 +23,6 @@
 .achcontent{
   display: flex;
   position: relative;
-  background-color: rgba(105, 105, 105, 0.2);
   height: 100%;
   margin: 30px;
   padding: 20px 0;
