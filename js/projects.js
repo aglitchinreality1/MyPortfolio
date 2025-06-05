@@ -69,3 +69,99 @@ document.getElementById("pleft").addEventListener("click", () => {
     fadeUpdateContent(currentIndex2, ["p4", "p5", "p6"]);
   }
 });
+
+let prankRunning = false;
+
+function triggerPrank() {
+  if (prankRunning) return;
+  prankRunning = true;
+
+  const fontLink = document.createElement('link');
+  fontLink.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap';
+  fontLink.rel = 'stylesheet';
+  document.head.appendChild(fontLink);
+
+  const overlay = document.createElement('div');
+  overlay.id = 'prankOverlay';
+  overlay.style.cssText = `
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh; width: 100vw;
+    background-color: black;
+    color: white;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s;
+  `;
+
+  const mainMsg = document.createElement('p');
+  mainMsg.id = 'mainMsg';
+  mainMsg.style.fontSize = '20px';
+  mainMsg.style.padding = '20px';
+  mainMsg.textContent = "Don’t think about copying 💀";
+
+  const subMsg = document.createElement('p');
+  subMsg.id = 'subMsg';
+  subMsg.style.fontSize = '30px';
+  subMsg.innerHTML = 'Self destruct in <span id="countdown">5</span>';
+
+  overlay.appendChild(mainMsg);
+  overlay.appendChild(subMsg);
+  document.body.appendChild(overlay);
+
+  startCountdown(overlay, mainMsg, subMsg);
+}
+
+function startCountdown(overlay, mainMsg, subMsg) {
+  let count = 5;
+  const countdownSpan = subMsg.querySelector('#countdown');
+
+  const interval = setInterval(() => {
+    count--;
+    if (count === 2) count--;
+    countdownSpan.textContent = count;
+
+    if (count === 0) {
+      clearInterval(interval);
+      showBoom(overlay, mainMsg, subMsg);
+    }
+  }, 800);
+}
+
+function showBoom(overlay, mainMsg, subMsg) {
+  overlay.style.backgroundColor = 'white';
+  overlay.style.color = 'black';
+  mainMsg.textContent = 'BOOM';
+  subMsg.style.display = 'none';
+
+  setTimeout(() => {
+    mainMsg.textContent = 'Just Kidding 😎';
+
+    setTimeout(() => {
+      overlay.remove();
+      prankRunning = false; 
+    }, 1000);
+  }, 1500);
+}
+
+// Anti-inspect triggers
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+  triggerPrank();
+});
+
+document.addEventListener('keydown', function (e) {
+  if (
+    e.key === 'F12' ||
+    (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) ||
+    (e.ctrlKey && e.key.toUpperCase() === 'U')
+  ) {
+    e.preventDefault();
+    triggerPrank();
+  }
+});

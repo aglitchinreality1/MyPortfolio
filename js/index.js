@@ -126,7 +126,16 @@ document.querySelectorAll('.b').forEach((button, index) => {
         const targetId = `s${index % 7}`;
         const targetSection = document.getElementById(targetId);
         const man = document.getElementById('man');
+        const controls = document.getElementById('controls'); 
+        const loc = document.getElementById('loc'); 
         closeMobileDropdown();
+
+        if (controls && loc) {
+            controls.style.visibility = 'hidden';
+            controls.style.opacity = '0';
+            loc.style.visibility = 'hidden';
+            loc.style.opacity = '0';
+        }
 
         if (targetSection) {
             const performScroll = () => {
@@ -136,10 +145,19 @@ document.querySelectorAll('.b').forEach((button, index) => {
                 });
 
                 setTimeout(() => {
-                    if (man && targetId != 's6') {
+                    if (man && targetId !== 's6') {
                         man.style.transition = 'transform 0.5s ease';
                         man.style.transform = 'translateX(-11vw)';
                         manMoved = true;
+
+                        if (controls) {
+                            setTimeout(() => {
+                                controls.style.visibility = 'visible';
+                                controls.style.opacity = '1';
+                                loc.style.visibility = 'visible';
+                                loc.style.opacity = '1';
+                            }, 500);
+                        }
                     }
                 }, 1000);
             };
@@ -151,7 +169,7 @@ document.querySelectorAll('.b').forEach((button, index) => {
 
                 setTimeout(() => {
                     performScroll();
-                }, 500); 
+                }, 500);
             } else {
                 performScroll();
             }
@@ -162,11 +180,18 @@ document.querySelectorAll('.b').forEach((button, index) => {
 });
 
 
+
 // Detect manual scrolling and reset "man"
 let lastScrollTop = window.scrollY;
 window.addEventListener('scroll', () => {
     const man = document.getElementById('man');
-    const currentScroll = window.scrollY;
+    const currentScroll = window.scrollY; 
+    if (controls) {
+            controls.style.visibility = 'hidden';
+            controls.style.opacity = '0';
+            loc.style.visibility = 'hidden';
+            loc.style.opacity = '0';
+        }
 
     if (manMoved && Math.abs(currentScroll - lastScrollTop) > 10) {
         if (man) {
