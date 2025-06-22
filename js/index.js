@@ -133,63 +133,58 @@ document.querySelectorAll('.nav-button').forEach(button => {
 });
 
 document.querySelectorAll('.b').forEach((button, index) => {
-    button.addEventListener('click', function () {
-        const targetId = `s${index % 7}`;
-        const targetSection = document.getElementById(targetId);
-        const man = document.getElementById('man');
-        const controls = document.getElementById('controls'); 
-        const loc = document.getElementById('loc'); 
-        closeMobileDropdown();
-
-        if (controls && loc) {
-            controls.style.visibility = 'hidden';
-            controls.style.opacity = '0';
-            loc.style.visibility = 'hidden';
-            loc.style.opacity = '0';
+  button.addEventListener('click', function () {
+    lockScrollTemporarily(4000);
+    const targetId = `s${index % 7}`;
+    const targetSection = document.getElementById(targetId);
+    const man = document.getElementById('man');
+    const controls = document.getElementById('controls'); 
+    const loc = document.getElementById('loc'); 
+    closeMobileDropdown();
+    if (controls && loc) {
+      controls.style.visibility = 'hidden';
+      controls.style.opacity = '0';
+      loc.style.visibility = 'hidden';
+      loc.style.opacity = '0';
+    }
+    if (targetSection) {
+      const performScroll = () => {
+        requestAnimationFrame(() => {
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+      setTimeout(() => {
+        if (man && targetId !== 's6') {
+          man.style.transition = 'transform 0.5s ease';
+          man.style.transform = 'translateX(-11vw)';
+          manMoved = true;
+          if (controls) {
+            setTimeout(() => {
+              controls.style.visibility = 'visible';
+              controls.style.opacity = '1';
+              loc.style.visibility = 'visible';
+              loc.style.opacity = '1';
+            }, 500);
+          }
         }
-
-        if (targetSection) {
-            const performScroll = () => {
-                requestAnimationFrame(() => {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-
-                setTimeout(() => {
-                    if (man && targetId !== 's6') {
-                        man.style.transition = 'transform 0.5s ease';
-                        man.style.transform = 'translateX(-11vw)';
-                        manMoved = true;
-
-                        if (controls) {
-                            setTimeout(() => {
-                                controls.style.visibility = 'visible';
-                                controls.style.opacity = '1';
-                                loc.style.visibility = 'visible';
-                                loc.style.opacity = '1';
-                            }, 500);
-                        }
-                    }
-                }, 1000);
-            };
-
-            if (manMoved && man) {
-                man.style.transition = 'transform 0.5s ease';
-                man.style.transform = 'translateX(0)';
-                manMoved = false;
-
-                setTimeout(() => {
-                    performScroll();
-                }, 500);
-            } else {
-                performScroll();
-            }
-        } else {
-            console.warn(`Section ${targetId} not found`);
-        }
-    });
+      }, 1000);
+      };
+      if (manMoved && man) {
+        man.style.transition = 'transform 0.5s ease';
+        man.style.transform = 'translateX(0)';
+        manMoved = false;
+        setTimeout(() => {
+          performScroll();
+        }, 500);
+      } else {
+          performScroll();
+      }
+    } else {
+        console.warn(`Section ${targetId} not found`);
+    }
+  });
 });
 
 
