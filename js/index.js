@@ -182,13 +182,6 @@ let lastScrollTop = window.scrollY;
 window.addEventListener('scroll', () => {
     const man = document.getElementById('man');
     const currentScroll = window.scrollY; 
-    if (controls) {
-            controls.style.visibility = 'hidden';
-            controls.style.opacity = '0';
-            loc.style.visibility = 'hidden';
-            loc.style.opacity = '0';
-        }
-
     if (manMoved && Math.abs(currentScroll - lastScrollTop) > 10) {
         if (man) {
             man.style.transition = 'transform 0.5s ease';
