@@ -303,61 +303,61 @@ document.getElementById("go").addEventListener("click", () => {
 // setupBidirectionalAutoScroll('resume');
 // setupBidirectionalAutoScroll('skill-list');
 
-// function setupHorizontalAutoScroll(className) {
-//   const containers = document.querySelectorAll(`.${className}`);
+function setupHorizontalAutoScroll(className) {
+  const containers = document.querySelectorAll(`.${className}`);
 
-//   containers.forEach(container => {
-//     let autoScrollActive = true;
-//     let scrollTimeout;
-//     let scrollIndex = 0;
+  containers.forEach(container => {
+    let autoScrollActive = true;
+    let scrollTimeout;
+    let scrollIndex = 0;
 
-//     const items = Array.from(container.children);
-//     const totalItems = items.length;
+    const items = Array.from(container.children);
+    const totalItems = items.length;
 
-//     const startAutoScroll = () => {
-//       autoScrollActive = true;
+    const startAutoScroll = () => {
+      autoScrollActive = true;
 
-//       const scrollLoop = async () => {
-//         while (autoScrollActive) {
-//           const itemWidth = items[0].offsetWidth;
-//           container.scrollTo({
-//             left: scrollIndex * itemWidth,
-//             behavior: 'smooth'
-//           });
+      const scrollLoop = async () => {
+        while (autoScrollActive) {
+          const itemWidth = items[0].offsetWidth;
+          container.scrollTo({
+            left: scrollIndex * itemWidth,
+            behavior: 'smooth'
+          });
 
-//           scrollIndex = (scrollIndex + 1) % totalItems;
-//           await new Promise(res => setTimeout(res, 5000));
-//         }
-//       };
+          scrollIndex = (scrollIndex + 1) % totalItems;
+          await new Promise(res => setTimeout(res, 5000));
+        }
+      };
 
-//       scrollLoop();
-//     };
+      scrollLoop();
+    };
 
-//     const stopAutoScroll = () => {
-//       autoScrollActive = false;
-//       clearTimeout(scrollTimeout);
-//       scrollTimeout = setTimeout(() => {
-//         startAutoScroll();
-//       }, 2000);
-//     };
+    const stopAutoScroll = () => {
+      autoScrollActive = false;
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        startAutoScroll();
+      }, 2000);
+    };
 
-//     container.addEventListener('scroll', () => {
-//       stopAutoScroll();
-//     });
+    container.addEventListener('scroll', () => {
+      stopAutoScroll();
+    });
 
-//     startAutoScroll();
-//   });
-// }
+    startAutoScroll();
+  });
+}
 
 
 
-// setupHorizontalAutoScroll('achcontent');
+setupHorizontalAutoScroll('achcontent');
 
-// setupHorizontalAutoScroll('expcont');
+setupHorizontalAutoScroll('expcont');
 
-// setInterval(() => {
-//   const button = document.getElementById('pright');
-//   if (button) {
-//     button.click();
-//   }
-// }, 7000);
+setInterval(() => {
+  const button = document.getElementById('pright');
+  if (button) {
+    button.click();
+  }
+}, 7000);
