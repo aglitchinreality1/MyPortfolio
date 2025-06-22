@@ -134,7 +134,7 @@ document.querySelectorAll('.nav-button').forEach(button => {
 
 document.querySelectorAll('.b').forEach((button, index) => {
   button.addEventListener('click', function () {
-    lockScrollTemporarily(4000);
+    lockScrollTemporarily(10000);
     const targetId = `s${index % 7}`;
     const targetSection = document.getElementById(targetId);
     const man = document.getElementById('man');
