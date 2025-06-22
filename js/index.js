@@ -243,66 +243,6 @@ document.getElementById("go").addEventListener("click", () => {
   });
 });
 
-
-function setupBidirectionalAutoScroll(className) {
-  const elements = document.querySelectorAll(`.${className}`);
-
-  elements.forEach(el => {
-    let autoScrollActive = true;
-    let scrollTimeout;
-    let userInteracting = false;
-
-    const startAutoScroll = () => {
-      autoScrollActive = true;
-      let scrollingDown = true;
-
-      const scrollLoop = async () => {
-        while (autoScrollActive) {
-          if (scrollingDown) {
-            if (el.scrollTop + el.clientHeight < el.scrollHeight - 1) {
-              el.scrollTop += 1;
-            } else {
-              scrollingDown = false;
-              await new Promise(res => setTimeout(res, 500));
-            }
-          } else {
-            if (el.scrollTop > 0) {
-              el.scrollTop -= 1;
-            } else {
-              scrollingDown = true;
-              await new Promise(res => setTimeout(res, 500));
-            }
-          }
-          await new Promise(res => setTimeout(res, 20));
-        }
-      };
-
-      scrollLoop();
-    };
-
-    const stopAutoScroll = () => {
-      autoScrollActive = false;
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        startAutoScroll();
-      }, 1000); 
-    };
-
-    el.addEventListener('scroll', () => {
-      if (!userInteracting) {
-        userInteracting = true;
-        stopAutoScroll();
-      }
-    });
-
-    startAutoScroll();
-  });
-}
-
-setupBidirectionalAutoScroll('his');
-setupBidirectionalAutoScroll('resume');
-setupBidirectionalAutoScroll('skill-list');
-
 function setupHorizontalAutoScroll(className) {
   const containers = document.querySelectorAll(`.${className}`);
 
