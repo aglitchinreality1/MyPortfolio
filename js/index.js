@@ -1,3 +1,14 @@
+let globalScrollLock = false;
+
+function lockScrollTemporarily(duration = 4000) {
+  globalScrollLock = true;
+  setTimeout(() => {
+    globalScrollLock = false;
+  }, duration);
+}
+
+
+
 // Typing animation
 const typingText = document.querySelector('.typing-text');
 const cursor = document.querySelector('.cursor');
@@ -243,6 +254,73 @@ document.getElementById("go").addEventListener("click", () => {
   });
 });
 
+
+function setupBidirectionalAutoScroll(className) {
+  const elements = document.querySelectorAll(`.${className}`);
+
+  elements.forEach(el => {
+    let autoScrollActive = true;
+    let scrollTimeout;
+    let userInteracting = false;
+
+    const startAutoScroll = () => {
+      autoScrollActive = true;
+      let scrollingDown = true;
+
+      const scrollLoop = async () => {
+        while (autoScrollActive) {
+          if (globalScrollLock) {
+            await new Promise(res => setTimeout(res, 100));
+            continue;
+          }
+
+          if (scrollingDown) {
+            if (el.scrollTop + el.clientHeight < el.scrollHeight - 1) {
+              el.scrollTop += 1;
+            } else {
+              scrollingDown = false;
+              await new Promise(res => setTimeout(res, 500));
+            }
+          } else {
+            if (el.scrollTop > 0) {
+              el.scrollTop -= 1;
+            } else {
+              scrollingDown = true;
+              await new Promise(res => setTimeout(res, 500));
+            }
+          }
+
+          await new Promise(res => setTimeout(res, 20));
+        }
+      };
+
+      scrollLoop();
+    };
+
+    const stopAutoScroll = () => {
+      autoScrollActive = false;
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        if (!globalScrollLock) startAutoScroll();
+      }, 2000);
+    };
+
+    el.addEventListener('scroll', () => {
+      if (!userInteracting) {
+        userInteracting = true;
+        stopAutoScroll();
+      }
+    });
+
+    startAutoScroll();
+  });
+}
+
+
+setupBidirectionalAutoScroll('his');
+setupBidirectionalAutoScroll('resume');
+setupBidirectionalAutoScroll('skill-list');
+
 function setupHorizontalAutoScroll(className) {
   const containers = document.querySelectorAll(`.${className}`);
 
@@ -259,7 +337,13 @@ function setupHorizontalAutoScroll(className) {
 
       const scrollLoop = async () => {
         while (autoScrollActive) {
-          const itemWidth = items[0].offsetWidth;
+          if (globalScrollLock || !items[scrollIndex]) {
+            await new Promise(res => setTimeout(res, 100));
+            continue;
+          }
+
+          const itemWidth = items[scrollIndex].offsetWidth;
+
           container.scrollTo({
             left: scrollIndex * itemWidth,
             behavior: 'smooth'
@@ -277,7 +361,7 @@ function setupHorizontalAutoScroll(className) {
       autoScrollActive = false;
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        startAutoScroll();
+        if (!globalScrollLock) startAutoScroll();
       }, 2000);
     };
 
@@ -288,6 +372,7 @@ function setupHorizontalAutoScroll(className) {
     startAutoScroll();
   });
 }
+
 
 
 
