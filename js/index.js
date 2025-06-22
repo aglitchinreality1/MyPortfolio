@@ -139,10 +139,12 @@ document.querySelectorAll('.b').forEach((button, index) => {
 
         if (targetSection) {
             const performScroll = () => {
+                requestAnimationFrame(() => {
                 targetSection.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
+            });
 
                 setTimeout(() => {
                     if (man && targetId !== 's6') {
